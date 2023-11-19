@@ -1,0 +1,58 @@
+<!-- FILEPATH: /Users/bhargavisandur/Documents/Task-auto/automation/templates/signup.html -->
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Sign Up Form</title>
+    <style>
+      /* CSS for the form */
+      form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      table {
+        border-collapse: collapse;
+        width: 60%; /* Adjust the width as needed */
+        margin: 20px; /* Add margin to the table */
+      }
+      th, td {
+        border: 1px solid #ddd; /* Add border to table cells */
+        padding: 10px; /* Add cell padding */
+        text-align: left; /* Align text to the left in cells */
+      }
+      input[type="text"],
+      input[type="email"],
+      input[type="password"] {
+        width: 100%; /* Make input fields take up the full width of cells */
+        box-sizing: border-box; /* Include padding and border in the total width */
+        margin-bottom: 8px; /* Add some space between input fields */
+        font-size: 16px;
+        padding: 10px;
+        border-radius: 5px;
+        border: 1px solid #ddd; /* Add border to input fields */
+      }
+      input[type="submit"] {
+        margin-top: 10px; /* Add some space above the submit button */
+        padding: 10px;
+        border-radius: 5px;
+        border: none;
+        width: 50%;
+        font-size: 16px;
+        background-color: #4CAF50;
+        color: white;
+        cursor: pointer;
+      }
+      input[type="submit"]:hover {
+        background-color: #3e8e41;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Sign Up Form</h1>
+    <form method="POST">{% csrf_token %}
+      {{ form.as_table }}
+      <input type="submit" value="Sign Up">
+    </form>
+  </body>
+</html>
